@@ -81,4 +81,18 @@ const styles = StyleSheet.create({
     width: 200,
     resizeMode: "cover",
   },
+  signUpContainer: {
+    flexDirection: "row",
+    justifyContent: "center",
+    alignItems: "center",
+    height: Platform.OS === "android" ? 70 : 50,
+    paddingBottom: Platform.OS === "android" ? 5 : 0,
+  },
+  signUpText: {
+    color: "#bbb",
+  },
+  signUpBtn: {
+    color: "#1af",
+    fontWeight: "700",
+  }
 });
