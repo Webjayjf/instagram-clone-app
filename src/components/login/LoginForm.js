@@ -11,64 +11,13 @@ import React, { useEffect, useState } from "react";
 import { Ionicons, MaterialCommunityIcons, Octicons } from "@expo/vector-icons";
 
 import * as Yup from "yup";
-import firebase from "firebase/compat/app";
 import MessageModal from "../shared/modals/MessageModal";
 import Animated, { FadeInDown, FadeOutDown } from "react-native-reanimated";
 
 const LoginForm = ({ navigation }) => {
-  const [obsecureText, setObsecureText] = useState(true);
-  const [emailOnFocus, setEmailOnFocus] = useState(false);
-  const [emailToValidate, SetEmailToValidate] = useState(false);
-  const [passwordToValidate, SetPasswordToValidate] = useState(false);
-  const [messageModalVisible, setMessageModalVisible] = useState(false);
-  const [errorMessage, setErrorMessage] = useState("");
-  const [developerMessage, setDeveloperMessage] = useState(false);
+  
 
-  useEffect(() => {
-    setTimeout(() => {
-      setDeveloperMessage(true);
-    }, 2000);
-    setTimeout(() => {
-      setDeveloperMessage(false);
-    }, 12000);
-  }, []);
-
-  const handleDataError = (message) => {
-    setErrorMessage(message);
-    setMessageModalVisible(true);
-    setTimeout(() => {
-      setMessageModalVisible(false);
-    }, 3500);
-  };
-
-  const LoginFormSchema = Yup.object().shape({
-    email: Yup.string()
-      .required()
-      .min(6, "A valid phone number, username or email address is required"),
-    password: Yup.string()
-      .required()
-      .min(6, "Your password has to have at least 8 characters"),
-  });
-
-  const onLogin = async (email, password) => {
-    Keyboard.dismiss();
-    try {
-      const userCredentials = await firebase
-        .auth()
-        .signInWithEmailAndPassword(email, password);
-      console.log(
-        "🔥 Firebase Login Successful ✅",
-        userCredentials.user.email
-      );
-    } catch (error) {
-      error.message ==
-        "Firebase: The password is invalid or the user does not have a password. (auth/wrong-password)." &&
-        handleDataError("The password is invalid, try again.");
-      error.message ==
-        "Firebase: There is no user record corresponding to this identifier. The user may have been deleted. (auth/user-not-found)." &&
-        handleDataError("Invalid email. Please verify your input.");
-    }
-  };
+  
 
   return (
     <View style={styles.container}>
