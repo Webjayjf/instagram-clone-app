@@ -11,7 +11,6 @@ import {
   KeyboardAvoidingView,
 } from "react-native";
 import SignupForm from "../components/signup/SignupForm";
-import Footer from "../components/signup/Footer";
 import { MaterialIcons } from "@expo/vector-icons";
 import FastImage from "react-native-fast-image";
 import { SIZES } from "../constants";
@@ -38,7 +37,7 @@ const Signup = ({ navigation }) => {
             </View>
           </View>
         </KeyboardAvoidingView>
-        <Footer navigation={navigation} />
+        
       </SafeAreaView>
     </TouchableWithoutFeedback>
   );
