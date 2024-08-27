@@ -9,7 +9,7 @@ import {
 } from "react-native";
 import React, { useEffect, useState } from "react";
 import { Ionicons, MaterialCommunityIcons, Octicons } from "@expo/vector-icons";
-import { Formik } from "formik";
+
 import * as Yup from "yup";
 import firebase from "firebase/compat";
 import MessageModal from "../shared/modals/MessageModal";
@@ -72,127 +72,29 @@ const LoginForm = ({ navigation }) => {
 
   return (
     <View style={styles.container}>
-      <Formik
-        initialValues={{ email: "", password: "" }}
-        onSubmit={(values) => {
-          onLogin(values.email, values.password);
-        }}
-        validationSchema={LoginFormSchema}
-        validateOnMount={true}
-      >
-        {({ handleChange, handleBlur, handleSubmit, values, isValid }) => (
-          <View>
-            <View
-              style={[
-                styles.inputField,
-                {
-                  paddingVertical: 16,
-                  borderColor:
-                    emailToValidate && values.email.length < 5
-                      ? "#f00"
-                      : "#444",
-                },
-              ]}
-            >
-              <TextInput
-                style={styles.inputText}
-                placeholderTextColor={"#bbb"}
-                placeholder="Email"
-                autoCapitalize="none"
-                autoCorrect={false}
-                inputMode="email"
-                keyboardType="email-address"
-                textContentType="emailAddress"
-                onChangeText={handleChange("email")}
-                onBlur={() => {
-                  handleBlur("email");
-                  setEmailOnFocus(false);
-                  values.email.length > 0
-                    ? SetEmailToValidate(true)
-                    : SetEmailToValidate(false);
-                }}
-                onFocus={() => setEmailOnFocus(true)}
-                value={values.email}
-              />
-              <TouchableOpacity onPress={() => handleChange("email")("")}>
-                <Octicons
-                  name={emailOnFocus ? "x-circle-fill" : ""}
-                  size={15}
-                  color={"#555"}
-                />
-              </TouchableOpacity>
-            </View>
-
-            <View
-              style={[
-                styles.inputField,
-                {
-                  borderColor:
-                    passwordToValidate && values.password.length < 6
-                      ? "#f00"
-                      : "#444",
-                },
-              ]}
-            >
-              <TextInput
-                style={styles.inputText}
-                placeholderTextColor={"#bbb"}
-                placeholder="Password"
-                autoCapitalize="none"
-                autoCorrect={false}
-                secureTextEntry={obsecureText}
-                textContentType="password"
-                onChangeText={handleChange("password")}
-                onBlur={() => {
-                  handleBlur("password");
-                  values.password.length > 0
-                    ? SetPasswordToValidate(true)
-                    : SetPasswordToValidate(false);
-                }}
-                value={values.password}
-              />
-              <TouchableOpacity onPress={() => setObsecureText(!obsecureText)}>
-                <MaterialCommunityIcons
-                  name={obsecureText ? "eye-off" : "eye"}
-                  size={24}
-                  color={obsecureText ? "#fff" : "#37e"}
-                />
-              </TouchableOpacity>
-            </View>
-            <View style={styles.forgotContainer}>
-              <TouchableOpacity onPress={() => navigation.navigate("Forgot")}>
-                <Text style={styles.forgotText}>Forgot Password?</Text>
-              </TouchableOpacity>
-            </View>
-            <TouchableOpacity onPress={handleSubmit} disabled={!isValid}>
-              <View style={styles.btnContainer(isValid)}>
-                <Text style={styles.btnText}>Log in</Text>
-              </View>
-            </TouchableOpacity>
-            <View style={{ height: 56 }}>
-              {developerMessage && (
-                <Animated.View
-                  style={styles.modalContainer}
-                  entering={FadeInDown.duration(1000)}
-                  exiting={FadeOutDown.duration(1000)}
-                >
-                  <Ionicons name={"logo-react"} size={24} color="#fff" />
-                  <Text style={styles.modalText}>
-                    Developed by Hernan Hawryluk
-                  </Text>
-                </Animated.View>
-              )}
-            </View>
-          </View>
-        )}
-      </Formik>
-
-      <MessageModal
-        messageModalVisible={messageModalVisible}
-        message={errorMessage}
-        height={70}
-        icon="wrong"
+      
+      
+    <View style={styles.container}>
+      <TextInput
+        style={styles.inputField}
+        placeholder="Email"
+        
       />
+      <TextInput
+        style={styles.inputField}
+        placeholder="Password"
+        
+      />
+      <TouchableOpacity style={styles.loginBtn} onPress={handleLogin}>
+        <Text style={styles.btnText}>Login</Text>
+      </TouchableOpacity>
+    </View>
+  
+
+
+  
+
+      
     </View>
   );
 };
