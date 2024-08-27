@@ -11,7 +11,6 @@ import {
 } from "react-native";
 import React, { useEffect, useState } from "react";
 import LoginForm from "./src/components/login/LoginForm";
-import Footer from "./src/components/login/Footer";
 import FastImage from "react-native-fast-image";
 
 const LoginScreen = ({ navigation }) => {
@@ -46,7 +45,7 @@ const LoginScreen = ({ navigation }) => {
             </View>
           </View>
         </KeyboardAvoidingView>
-        <Footer navigation={navigation} />
+        
       </SafeAreaView>
     </TouchableWithoutFeedback>
   );
