@@ -104,6 +104,7 @@ export default LoginForm;
 const styles = StyleSheet.create({
   container: {
     marginTop: 20,
+    padding: 20
   },
   inputField: {
     marginTop: 14,
