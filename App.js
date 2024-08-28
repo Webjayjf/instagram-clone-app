@@ -11,7 +11,6 @@ import {
 } from "react-native";
 import React, { useEffect, useState } from "react";
 import LoginForm from "./src/components/login/LoginForm";
-import FastImage from "react-native-fast-image";
 
 const LoginScreen = ({ navigation }) => {
   const [messageModalVisible, setMessageModalVisible] = useState(false);
@@ -32,14 +31,14 @@ const LoginScreen = ({ navigation }) => {
           style={{ flex: 1 }}
           behavior={Platform.OS === "ios" ? "padding" : "height"}
         >
-          <View style={styles.mainContainer}>
+          <View style={styles.logoContainer}>
             <View>
-              <Animated.View style={styles.logoContainer}>
-                <FastImage
-                  source={require("./assets/images/header-logo.png")}
-                  style={styles.logo}
-                />
-              </Animated.View>
+               <View style={styles.logoContainer}>
+      <Image
+        source={require('./assets/to/your/image.jpg')}
+        style={styles.logo}
+      />
+    </View> 
 
               <LoginForm navigation={navigation} />
             </View>
