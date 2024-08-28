@@ -45,7 +45,7 @@ const LoginScreen = ({ navigation }) => {
           </View>
         </KeyboardAvoidingView>
         <View>
-      <Divider width={0.5} color="#333" />
+      
       <View style={styles.signUpContainer}>
         <Text style={styles.signUpText}>Don't have an account? </Text>
         <TouchableOpacity onPress={() => navigation.navigate("Signup")}>
