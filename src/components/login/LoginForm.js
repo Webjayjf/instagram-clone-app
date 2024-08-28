@@ -11,7 +11,6 @@ import React, { useEffect, useState } from "react";
 import { Ionicons, MaterialCommunityIcons, Octicons } from "@expo/vector-icons";
 
 import * as Yup from "yup";
-import MessageModal from "../shared/modals/MessageModal";
 import Animated, { FadeInDown, FadeOutDown } from "react-native-reanimated";
 
 const LoginForm = ({ navigation }) => {
