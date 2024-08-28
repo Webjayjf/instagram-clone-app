@@ -4,6 +4,7 @@ import {
   SafeAreaView,
   Keyboard,
   TouchableWithoutFeedback,
+  TouchableOpacity,
   Animated,
   Platform,
   StatusBar,
