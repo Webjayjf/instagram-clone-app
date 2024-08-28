@@ -36,7 +36,7 @@ const LoginScreen = ({ navigation }) => {
             <View>
               <Animated.View style={styles.logoContainer}>
                 <FastImage
-                  source={require("../../assets/images/header-logo.png")}
+                  source={require("./assets/images/header-logo.png")}
                   style={styles.logo}
                 />
               </Animated.View>
