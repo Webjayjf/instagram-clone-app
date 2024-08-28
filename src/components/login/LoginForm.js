@@ -91,11 +91,11 @@ const styles = StyleSheet.create({
     marginTop: 35,
     alignItems: "center",
     backgroundColor: "#07f",
-    opacity: isValid ? 1 : 0.6,
+    
     marginHorizontal: 20,
     justifyContent: "center",
     alignContent: "center",
-    height: Platform.OS === "android" ? 56 : 54,
+    
     borderRadius: 10,
   }),
   btnText: {
@@ -125,6 +125,6 @@ const styles = StyleSheet.create({
     fontSize: 14,
     fontWeight: "500",
     color: "#fff",
-    marginBottom: Platform.OS === "android" ? 4 : 0,
+    
   },
 });
